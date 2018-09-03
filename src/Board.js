@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 
 import BoardPiece from './BoardPiece.js';
+import BoardPieceInfo from './BoardPieceInfo.js';
 
 class Board extends Component {
     render() {
@@ -21,7 +22,7 @@ class Board extends Component {
                         <BoardPiece index = {15}/>
                         <BoardPiece index = {14}/>
                     </div>
-                    <div className="blank-line"/>
+                    <BoardPieceInfo />
                     <div className="three-line">
                         <BoardPiece index = {6}/>
                         <BoardPiece index = {7}/>

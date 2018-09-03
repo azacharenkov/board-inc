@@ -1,0 +1,101 @@
+{
+    "tiles": [
+        {
+            "name": "GO",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Ore Mine",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Iron Mine",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Gold Mine",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Jail",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Meseum",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Gym",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Club",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Parking",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Cardiff",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Bath",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Bristol",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Random",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Picadilly",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Tax",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        },
+        {
+            "name": "Pall Mall",
+            "basePrice": 0.5,
+            "visited": 0,
+            "bought": 0
+        }
+    ]
+
+}

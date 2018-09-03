@@ -48,6 +48,14 @@
     background: yellow;
 }
 
+.board-piece-info {
+    border: solid;
+    width: 152px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
 .full-line {
     display: flex;
 }
