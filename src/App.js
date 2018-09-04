@@ -7,6 +7,7 @@ import './App.css';
 
 import Board from './Board.js';
 import Dice from './Dice.js';
+import PiecePurchaseButtons from './PiecePurchaseButtons.js';
 
 import board from './files/board.json';
 
@@ -84,6 +85,7 @@ class App extends Component {
             <div className="app">
                 <Board />
                 <Dice movePosition = {this.movePosition}/>
+                <PiecePurchaseButtons />
             </div>
         );
     }

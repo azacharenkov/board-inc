@@ -71,3 +71,24 @@
 .dice {
     margin: 54px;
 }
+
+.board-piece-purchase {
+
+}
+
+.purchase-btn {
+    border: solid;
+    border-radius: 3px;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    border-width: 1px;
+}
+
+.purchase-btn .amount {
+
+}
+
+.purchase-btn .cost {
+
+}
