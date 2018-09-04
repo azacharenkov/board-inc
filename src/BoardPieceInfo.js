@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 
-import board from './files/board.json';
-
 class BoardPieceInfo extends Component {
 
     state = {
@@ -11,12 +9,21 @@ class BoardPieceInfo extends Component {
 
     render() {
 
-        var boardPiece = board.tiles[this.props.boardState.position];
+        if(this.props.boardState.board === null) {
+            return (
+                <div className = {"board-piece-info"}/>
+            )
+        }
+
+        var boardPiece = this.props.boardState.board.tiles[this.props.boardState.position - 1];
 
         return (
             <div className = {"board-piece-info"}>
                 <div className="title">
                     {boardPiece.name}
+                </div>
+                <div>
+                    {"Visited: " + boardPiece.visited}
                 </div>
             </div>
         );
