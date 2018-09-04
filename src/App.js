@@ -13,7 +13,27 @@ import board from './files/board.json';
 class App extends Component {
 
     componentDidMount() {
-        this.props.setBoard(board);
+        this.loadData();
+
+        this.saveTimerHandler = setTimeout(()=> this.saveData(), 10000);
+    }
+
+    loadData = () => {
+        if(localStorage.board && localStorage.board !== null) {
+            this.props.setBoard(JSON.parse(localStorage.board));
+            this.props.changePosition(parseInt(localStorage.position), parseInt(localStorage.position));
+        }
+        else {
+            this.props.setBoard(board);
+        }
+    }
+
+    saveData = () => {
+        if(localStorage) {
+            localStorage.setItem("board", JSON.stringify(this.props.boardState.board));
+            localStorage.setItem("position", this.props.boardState.position);
+        }
+        this.saveTimerHandler = setTimeout(()=> this.saveData(), 10000);
     }
 
     movePosition = (dice) => {
@@ -51,6 +71,11 @@ class App extends Component {
         if (this.timerHandler) {
             clearTimeout(this.timerHandler);
             this.timerHandler = 0;
+        }
+
+        if (this.saveTimerHandler) {
+            clearTimeout(this.saveTimerHandler);
+            this.saveTimerHandler = 0;
         }
     }
 
