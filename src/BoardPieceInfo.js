@@ -11,7 +11,7 @@ class BoardPieceInfo extends Component {
 
     render() {
 
-        var boardPiece = board.tiles[this.props.boardState.position];
+        var boardPiece = board.tiles[this.props.boardState.position - 1];
 
         return (
             <div className = {"board-piece-info"}>
