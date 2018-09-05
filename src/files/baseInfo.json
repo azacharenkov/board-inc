@@ -3,114 +3,82 @@
         {
             "name": "GO",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 0.5
         },
         {
             "name": "Ore Mine",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 1.5
         },
         {
             "name": "Iron Mine",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 2.0
         },
         {
             "name": "Gold Mine",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 2.5
         },
         {
             "name": "Jail",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 3.0
         },
         {
             "name": "Meseum",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 3.5
         },
         {
             "name": "Gym",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 4.0
         },
         {
             "name": "Club",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 4.5
         },
         {
             "name": "Parking",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 5.0
         },
         {
             "name": "Cardiff",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 5.5
         },
         {
             "name": "Bath",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 6.0
         },
         {
             "name": "Bristol",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 6.5
         },
         {
             "name": "Random",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 7.0
         },
         {
             "name": "Picadilly",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 7.5
         },
         {
             "name": "Tax",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 8.0
         },
         {
             "name": "Pall Mall",
             "basePrice": 0.5,
-            "baseIncome": 0.5,
-            "visited": 0,
-            "bought": 0
+            "baseIncome": 8.5
         }
     ]
 

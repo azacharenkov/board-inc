@@ -23,8 +23,8 @@ export class BoardReducers {
                         board: action.board
                     });
                 case PURCHASE:
-                var board = state.board;
-                board.tiles[action.index].bought = board.tiles[action.index].bought + action.buildings;
+                    var board = state.board;
+                    board.tiles[action.index].bought = board.tiles[action.index].bought + action.buildings;
                     return Object.assign({}, state, {
                         board: board
                     });
