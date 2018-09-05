@@ -11,6 +11,7 @@ export class AppStore {
         // Combine Reducers
         var reducers = combineReducers({
             boardState: BoardReducers.boardPositionSelection(),
+            walletState: BoardReducers.wallet(),
         });
 
 

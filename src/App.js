@@ -7,6 +7,7 @@ import './App.css';
 
 import Board from './Board.js';
 import Dice from './Dice.js';
+import WalletInfo from './WalletInfo.js';
 import PiecePurchaseButtons from './PiecePurchaseButtons.js';
 
 import board from './files/board.json';
@@ -83,9 +84,16 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <Board />
-                <Dice movePosition = {this.movePosition}/>
-                <PiecePurchaseButtons />
+                <div className="board-and-dice">
+                    <Board />
+                    <div>
+                        <WalletInfo />
+                        <Dice movePosition = {this.movePosition}/>
+                    </div>
+                </div>
+                <div className="purchases">
+                    <PiecePurchaseButtons />
+                </div>
             </div>
         );
     }

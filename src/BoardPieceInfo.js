@@ -25,6 +25,9 @@ class BoardPieceInfo extends Component {
                 <div>
                     {"Visited: " + boardPiece.visited}
                 </div>
+                <div>
+                    {"x" + boardPiece.bought}
+                </div>
             </div>
         );
     }

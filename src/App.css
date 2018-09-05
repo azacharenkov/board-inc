@@ -28,7 +28,7 @@
 }
 
 .app {
-    display: flex;
+    display: block;
 }
 
 .mid-line {
@@ -73,16 +73,28 @@
 }
 
 .board-piece-purchase {
-
+    display: flex;
 }
 
 .purchase-btn {
     border: solid;
     border-radius: 3px;
-    width: 50px;
-    height: 40px;
+    font-size: 12px;
+    width: 60px;
+    height: 28px;
     text-align: center;
     border-width: 1px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.board-and-dice {
+    display: flex;
+}
+
+.purchases {
+    width: 280px;
+    margin: 10px 0 0 20px;
 }
 
 .purchase-btn .amount {
@@ -91,4 +103,8 @@
 
 .purchase-btn .cost {
 
+}
+
+.wallet-state {
+    margin: 10px;
 }
