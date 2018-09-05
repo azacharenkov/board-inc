@@ -13,7 +13,7 @@ class BoardPiece extends Component {
         if(this.props.index === this.props.boardState.position) {
             return (
                 <div className="avatar">
-                    <img src = {avatar} />
+                    {/* <img src = {avatar} /> */}
                 </div>
             )
         }
