@@ -17,17 +17,21 @@ class Board extends Component {
                 </div>
 
                 <div className="mid-line">
+
                     <div className="three-line">
                         <BoardPiece index = {16}/>
                         <BoardPiece index = {15}/>
                         <BoardPiece index = {14}/>
                     </div>
+
                     <BoardPieceInfo />
+
                     <div className="three-line">
                         <BoardPiece index = {6}/>
                         <BoardPiece index = {7}/>
                         <BoardPiece index = {8}/>
                     </div>
+                    
                 </div>
 
                 <div className="full-line">
