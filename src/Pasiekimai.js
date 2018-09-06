@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 
+import achievemnts from './files/achievemnts.json';
+
 class Pasiekimai extends Component {
 
     state = {
