@@ -30,26 +30,28 @@ class PiecePurchaseButtons extends Component {
     getButtons = () => {
         var btns = [];
 
+        let costForOne = CostUtils.costOf(this.props.boardState, 1);
+
         btns.push(
-            <div className="purchase-btn" onClick = {(e) => this.props.purchase(10, this.props.boardState.position - 1, 1)}>
+            <div className="purchase-btn" onClick = {(e) => this.props.purchase(costForOne, this.props.boardState.position - 1, 1)}>
                 <div className="amount">x1</div>
-                <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 1)).toFixed(2)}</div>
+                <div className="cost">{parseFloat(costForOne).toFixed(2)}</div>
             </div>
         );
 
-        btns.push(
-            <div className="purchase-btn">
-                <div className="amount">x10</div>
-                <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 10)).toFixed(2)}</div>
-            </div>
-        );
+        // btns.push(
+        //     <div className="purchase-btn">
+        //         <div className="amount">x10</div>
+        //         <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 10)).toFixed(2)}</div>
+        //     </div>
+        // );
 
-        btns.push(
-            <div className="purchase-btn">
-                <div className="amount">x100</div>
-                <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 100)).toFixed(2)}</div>
-            </div>
-        );
+        // btns.push(
+        //     <div className="purchase-btn">
+        //         <div className="amount">x100</div>
+        //         <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 100)).toFixed(2)}</div>
+        //     </div>
+        // );
 
         return btns;
     }

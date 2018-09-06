@@ -1,110 +1,114 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.app {
-    display: block;
-}
-
-.mid-line {
-    display: flex;
-}
-
-.board-piece {
-    width:  50px;
-    height: 50px;
-    border-radius: 5px;
-    border: solid;
-    border-width: 3px;
     text-align: center;
+  }
+  
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .app {
+      display: block;
+  }
+  
+  .mid-line {
+      display: flex;
+  }
+  
+  .board-piece {
+      width:  50px;
+      height: 50px;
+      border-radius: 5px;
+      border: solid;
+      border-width: 3px;
+      text-align: center;
+  }
+  
+  .board-piece.true {
+      background: yellow;
+  }
+  
+  .board-piece-info {
+      border: solid;
+      width: 152px;
+      margin: 5px;
+      border-radius: 5px;
+      text-align: center;
+  }
+  
+  .full-line {
+      display: flex;
+  }
+  
+  .three-line {
+  
+  }
+  
+  .blank-line {
+      width: 168px;
+  }
+  
+  .dice {
+      margin: 54px;
+  }
+  
+  .board-piece-purchase {
+      display: flex;
+  }
+  
+  .purchase-btn {
+      border: solid;
+      border-radius: 3px;
+      font-size: 12px;
+      width: 60px;
+      height: 28px;
+      text-align: center;
+      border-width: 1px;
+      margin: 5px;
+      padding: 5px;
+  }
+  
+img {
+    height: 100%;
 }
 
-.board-piece.true {
-    background: yellow;
-}
-
-.board-piece-info {
-    border: solid;
-    width: 152px;
-    margin: 5px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.full-line {
-    display: flex;
-}
-
-.three-line {
-
-}
-
-.blank-line {
-    width: 168px;
-}
-
-.dice {
-    margin: 54px;
-}
-
-.board-piece-purchase {
-    display: flex;
-}
-
-.purchase-btn {
-    border: solid;
-    border-radius: 3px;
-    font-size: 12px;
-    width: 60px;
-    height: 28px;
-    text-align: center;
-    border-width: 1px;
-    margin: 5px;
-    padding: 5px;
-}
-
-.board-and-dice {
-    display: flex;
-}
-
-.purchases {
-    width: 280px;
-    margin: 10px 0 0 20px;
-}
-
-.purchase-btn .amount {
-
-}
-
-.purchase-btn .cost {
-
-}
-
-.wallet-state {
-    margin: 10px;
-}
+  .board-and-dice {
+      display: flex;
+  }
+  
+  .purchases {
+      width: 280px;
+      margin: 10px 0 0 20px;
+  }
+  
+  .purchase-btn .amount {
+  
+  }
+  
+  .purchase-btn .cost {
+  
+  }
+  
+  .wallet-state {
+      margin: 10px;
+  }
