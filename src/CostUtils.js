@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
+import baseInfo from './files/baseInfo.json';
+
 export class CostUtils extends Component {
 
     static costOf(index, amount) {
 
         // Get the piece info from the json file
-        var pieceInfo = {};
+        var pieceInfo = baseInfo.tiles[index];
 
         switch(index) {
             case 0:
