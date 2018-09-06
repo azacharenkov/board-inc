@@ -7,6 +7,7 @@ export class BoardReducers {
 
 		var initialState = {
             position: 1,
+            moves: 0,
             rolled: [0, 0, 0, 0, 0, 0],
             targetPosition: 1,
             board: null,
@@ -28,8 +29,10 @@ export class BoardReducers {
                     var newRolls = state.rolled;
                     newRolls.unshift(action.number);
                     newRolls.pop();
+                    var moves = state.moves + 1;
                     return Object.assign({}, state, {
-                        rolled: newRolls
+                        rolled: newRolls,
+                        moves: moves
                     });
                 case PURCHASE:
                     var board = state.board;

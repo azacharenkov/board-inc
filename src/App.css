@@ -54,6 +54,7 @@
       margin: 5px;
       border-radius: 5px;
       text-align: center;
+      position: relative;
   }
   
   .full-line {
@@ -92,7 +93,43 @@ img {
     height: 100%;
 }
 
-  .board-and-dice {
+.piece-image {
+    height: 25px;
+    margin: 5px;
+}
+
+.piece-footer {
+
+}
+
+.board-piece-info .piece-info-image {
+    height: 100px;
+}
+
+.board-piece-info .title {
+    padding: 5px 0 5px 0;
+    background: lightgray;
+}
+
+.board-piece-info .footer {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+}
+
+.board-piece-info .footer .visited {
+    width: 70px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.board-piece-info .footer .owned {
+    width: 70px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.board-and-dice {
       display: flex;
   }
   

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 
-import avatar from './images/dog.png';
+import building from './images/gym.png';
+import baseInfo from './files/baseInfo.json';
 
 class BoardPiece extends Component {
 
@@ -21,10 +22,15 @@ class BoardPiece extends Component {
     }
 
     render() {
+        var pieceUrl = baseInfo.tiles[this.props.index-1].imageUrl;
         return (
             <div className = {"board-piece " + (this.props.index === this.props.boardState.position)}>
-                <div className="title">
-                    {this.props.index}
+                <div className="piece-image">
+                    <img src = {require('./images/' + pieceUrl)} />
+                </div>
+                <div className="piece-footer">
+                    <div className="left"></div>
+                    <div className="right"></div>
                 </div>
                 {this.getAvatar()}
             </div>

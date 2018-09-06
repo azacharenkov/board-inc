@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 
-import achievemnts from './files/achievemnts.json';
+import achievemnts from './files/achievements.json';
 
 class Pasiekimai extends Component {
 
@@ -13,6 +13,7 @@ class Pasiekimai extends Component {
         return (
             <div>
                 {this.props.boardState.rolled}
+                {"M: " + this.props.boardState.moves}
             </div>
         );
     }
