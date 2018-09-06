@@ -9,6 +9,7 @@ import Board from './Board.js';
 import Dice from './Dice.js';
 import WalletInfo from './WalletInfo.js';
 import PiecePurchaseButtons from './PiecePurchaseButtons.js';
+import Pasiekimai from './Pasiekimai.js';
 
 import board from './files/board.json';
 
@@ -43,6 +44,7 @@ class App extends Component {
         if(pos === 0) {
             pos++;
         }
+        this.props.roll(dice);
         this.timerHandler = setTimeout(()=> this.movePosTimeOut(1, dice, pos), 250);
     }
 
@@ -89,6 +91,7 @@ class App extends Component {
                     <div>
                         <WalletInfo />
                         <Dice movePosition = {this.movePosition}/>
+                        <Pasiekimai />
                     </div>
                 </div>
                 <div className="purchases">
@@ -111,6 +114,9 @@ class App extends Component {
             },
             updateBoard: (board) => {
                 dispatch(Actions.updateBoard(board));
+            },
+            roll: (number) => {
+                dispatch(Actions.roll(number));
             }
         }
     }

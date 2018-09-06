@@ -1,4 +1,5 @@
-import { BOARD_SELECTION, BOARD_ASSIGNMENT, BOARD_UPDATE, PURCHASE, GAIN } from './Actions.jsx';
+import { BOARD_SELECTION, BOARD_ASSIGNMENT, 
+    BOARD_UPDATE, ROLL, PURCHASE, GAIN } from './Actions.jsx';
 
 export class BoardReducers {
     
@@ -6,6 +7,7 @@ export class BoardReducers {
 
 		var initialState = {
             position: 1,
+            rolled: [0, 0, 0, 0, 0, 0],
             targetPosition: 1,
             board: null,
 		}
@@ -21,6 +23,13 @@ export class BoardReducers {
                 case BOARD_UPDATE:
                     return Object.assign({}, state, {
                         board: action.board
+                    });
+                case ROLL:
+                    var newRolls = state.rolled;
+                    newRolls.unshift(action.number);
+                    newRolls.pop();
+                    return Object.assign({}, state, {
+                        rolled: newRolls
                     });
                 case PURCHASE:
                     var board = state.board;

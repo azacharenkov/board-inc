@@ -10,21 +10,20 @@ class PiecePurchaseButtons extends Component {
 
     }
 
-    render() {
-
-        if(this.props.boardState.board === null) {
+    getButtonsDiv = () => {
+        if(this.props.boardState.board !== null && CostUtils.isPurchasable(this.props.boardState.position - 1)) {
+            var boardPiece = this.props.boardState.board.tiles[this.props.boardState.position - 1];
             return (
-                <div className = "board-piece-purchase"/>
-            )
+                <div className = "board-piece-purchase">
+                    {this.getButtons()}
+                </div>
+            );
         }
+        return null;
+    }
 
-        var boardPiece = this.props.boardState.board.tiles[this.props.boardState.position - 1];
-
-        return (
-            <div className = "board-piece-purchase">
-                {this.getButtons()}
-            </div>
-        );
+    render() {
+        return this.getButtonsDiv();
     }
 
     getButtons = () => {

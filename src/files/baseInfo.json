@@ -2,83 +2,99 @@
     "tiles": [
         {
             "name": "GO",
-            "basePrice": 0.5,
-            "baseIncome": 0.5
+            "basePrice": 0,
+            "baseIncome": 0,
+            "purchasable": false
         },
         {
             "name": "Ore Mine",
-            "basePrice": 0.5,
-            "baseIncome": 1.5
+            "basePrice": 55,
+            "baseIncome": 0.1,
+            "purchasable": true
         },
         {
             "name": "Iron Mine",
-            "basePrice": 0.5,
-            "baseIncome": 2.0
+            "basePrice": 105,
+            "baseIncome": 0.5,
+            "purchasable": true
         },
         {
             "name": "Gold Mine",
-            "basePrice": 0.5,
-            "baseIncome": 2.5
+            "basePrice": 150,
+            "baseIncome": 1.0,
+            "purchasable": true
         },
         {
             "name": "Jail",
-            "basePrice": 0.5,
-            "baseIncome": 3.0
+            "basePrice": 0,
+            "baseIncome": 0,
+            "purchasable": false
         },
         {
             "name": "Meseum",
-            "basePrice": 0.5,
-            "baseIncome": 3.5
+            "basePrice": 250,
+            "baseIncome": 1.5,
+            "purchasable": true
         },
         {
             "name": "Gym",
-            "basePrice": 0.5,
-            "baseIncome": 4.0
+            "basePrice": 300,
+            "baseIncome": 2.0,
+            "purchasable": true
         },
         {
             "name": "Club",
-            "basePrice": 0.5,
-            "baseIncome": 4.5
+            "basePrice": 350,
+            "baseIncome": 2.5,
+            "purchasable": true
         },
         {
             "name": "Parking",
-            "basePrice": 0.5,
-            "baseIncome": 5.0
+            "basePrice": 400,
+            "baseIncome": 3.0,
+            "purchasable": true
         },
         {
             "name": "Cardiff",
-            "basePrice": 0.5,
-            "baseIncome": 5.5
+            "basePrice": 450,
+            "baseIncome": 3.5,
+            "purchasable": true
         },
         {
             "name": "Bath",
-            "basePrice": 0.5,
-            "baseIncome": 6.0
+            "basePrice": 500,
+            "baseIncome": 4.0,
+            "purchasable": true
         },
         {
             "name": "Bristol",
-            "basePrice": 0.5,
-            "baseIncome": 6.5
+            "basePrice": 550,
+            "baseIncome": 4.5,
+            "purchasable": true
         },
         {
             "name": "Random",
-            "basePrice": 0.5,
-            "baseIncome": 7.0
+            "basePrice": 600,
+            "baseIncome": 5.0,
+            "purchasable": true
         },
         {
             "name": "Picadilly",
-            "basePrice": 0.5,
-            "baseIncome": 7.5
+            "basePrice": 650,
+            "baseIncome": 5.5,
+            "purchasable": true
         },
         {
             "name": "Tax",
-            "basePrice": 0.5,
-            "baseIncome": 8.0
+            "basePrice": 700,
+            "baseIncome": 6.0,
+            "purchasable": true
         },
         {
             "name": "Pall Mall",
-            "basePrice": 0.5,
-            "baseIncome": 8.5
+            "basePrice": 750,
+            "baseIncome": 6.5,
+            "purchasable": true
         }
     ]
 
