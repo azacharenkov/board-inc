@@ -151,7 +151,17 @@ img {
 }
 
 .achievements-div {
-border: solid;
-margin: 10px;
-border-radius: 5px;
+    border: solid;
+    margin: 10px;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.achievements-div .achievement {
+    width: 30px;
+    height: 30px;
+    border: solid;
+    border-radius: 5px;
+    margin: 1px;
 }

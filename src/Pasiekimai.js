@@ -11,9 +11,9 @@ class Pasiekimai extends Component {
 
     createAchievements = () => {
 
-        var achs = [];
-
+        var rows = [];
         for (var i = 0; i < achievements.achievements.length; i++) {
+            var achs = [];
             var ach = achievements.achievements[i];
             for (var a = 0; a < ach.rewards.length; a++) {
                 var rew = ach.rewards[a];
@@ -22,15 +22,25 @@ class Pasiekimai extends Component {
                     </div>
                 )
             }
+            rows.push(
+                <div className="ach-row">
+                    {achs}
+                </div>
+            )
         }
-
+        return rows;
     }
 
     render() {
         return (
-            <div className="achievements-div">
-                {this.props.boardState.rolled}
-                {"M: " + this.props.boardState.moves}
+            <div>
+                <div className="achievements-temp">
+                    {this.props.boardState.rolled}
+                    {"M: " + this.props.boardState.moves}
+                </div>
+                <div className="achievements-div">
+                    {this.createAchievements()}
+                </div>
             </div>
         );
     }
