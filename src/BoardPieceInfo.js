@@ -28,7 +28,7 @@ class BoardPieceInfo extends Component {
                     {boardPiece.name}
                 </div>
                 <div className="piece-info-image">
-                    <img src = {require('./images/' + pieceUrl)} />
+                    <img src ="" alt="i" />
                 </div>
                 <div className="footer">
                     <div className="visited">

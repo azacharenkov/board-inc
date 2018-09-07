@@ -66,28 +66,28 @@
   }
   
   .blank-line {
-      width: 168px;
+    width: 168px;
   }
   
   .dice {
-      margin: 54px;
+    margin: 0 55px 0 55px;
   }
   
   .board-piece-purchase {
-      display: flex;
+    display: flex;
   }
   
   .purchase-btn {
-      border: solid;
-      border-radius: 3px;
-      font-size: 12px;
-      width: 60px;
-      height: 28px;
-      text-align: center;
-      border-width: 1px;
-      margin: 5px;
-      padding: 5px;
-  }
+    border: solid;
+    border-radius: 3px;
+    font-size: 12px;
+    width: 60px;
+    height: 28px;
+    text-align: center;
+    border-width: 1px;
+    margin: 5px;
+    padding: 5px;
+}
   
 img {
     height: 100%;
@@ -130,22 +130,28 @@ img {
 }
 
 .board-and-dice {
-      display: flex;
-  }
+    display: flex;
+}
   
-  .purchases {
-      width: 280px;
-      margin: 10px 0 0 20px;
-  }
-  
-  .purchase-btn .amount {
-  
-  }
-  
-  .purchase-btn .cost {
-  
-  }
-  
-  .wallet-state {
-      margin: 10px;
-  }
+.purchases {
+    width: 280px;
+    margin: 10px 0 0 20px;
+}
+
+.purchase-btn .amount {
+
+}
+
+.purchase-btn .cost {
+
+}
+
+.wallet-state {
+    margin: 10px;
+}
+
+.achievements-div {
+border: solid;
+margin: 10px;
+border-radius: 5px;
+}

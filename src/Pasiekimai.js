@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 
-import achievemnts from './files/achievements.json';
+import achievements from './files/achievements.json';
 
 class Pasiekimai extends Component {
 
@@ -9,9 +9,26 @@ class Pasiekimai extends Component {
 
     }
 
+    createAchievements = () => {
+
+        var achs = [];
+
+        for (var i = 0; i < achievements.achievements.length; i++) {
+            var ach = achievements.achievements[i];
+            for (var a = 0; a < ach.rewards.length; a++) {
+                var rew = ach.rewards[a];
+                achs.push(
+                    <div className="achievement">
+                    </div>
+                )
+            }
+        }
+
+    }
+
     render() {
         return (
-            <div>
+            <div className="achievements-div">
                 {this.props.boardState.rolled}
                 {"M: " + this.props.boardState.moves}
             </div>
