@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import baseInfo from './files/baseInfo.json';
+import buildInfo from './files/buildInfo.json';
 
 export class CostUtils extends Component {
 
@@ -8,14 +9,24 @@ export class CostUtils extends Component {
         return baseInfo.tiles[index].purchasable;
     }
 
+    static getTileName(index) {
+        return baseInfo.tiles[index].name;
+    }
+
+    static getTileDescription(index) {
+        return buildInfo.tiles[index].info;
+    }
+
     static costOf(boardState, amount) {
 
         // Get the piece info from the json file
-        var position = boardState.position - 1;
-        var pieceInfo = boardState.board.tiles[position];
-        var pieceBase = baseInfo.tiles[position];
+        var p = boardState.position - 1;
+        var pieceInfo = boardState.board.tiles[p];
+        var pieceBase = baseInfo.tiles[p];
+        var o = pieceInfo.bought;
+        var bp = pieceBase.basePrice;
 
-        switch(position) {
+        switch(p) {
             case 0:
             case 1:
             case 2:
@@ -33,9 +44,29 @@ export class CostUtils extends Component {
             case 14:
             case 15:
             case 16:
-                return (pieceBase.basePrice + position) * Math.pow((1.15 + (position/1000)), pieceInfo.bought);
+                if(amount === 1) {
+                    return (bp) * Math.pow((1.15 + (p/1000)), o);
+                }
+                return this.calculateDiscount(amount) * bp * (this.calculateSumOf(amount + o, 1.15 + (p/1000)) - this.calculateSumOf(o, 1.15 + (p/1000)));
+                
             default:
                 return 0;
         }
+    }
+
+    static calculateDiscount(amountBuying) {
+        return 1 - Math.min(0.1, (amountBuying / 10) * 0.0001);
+    }
+
+    static calculateSumOf(n, base) {
+        return (Math.pow(base, n+1)/(base - 1));
+    }
+
+    static toExponential(number) {
+        if(number < 1000) {
+            return parseFloat(number).toFixed(2);
+        }
+        var exp = number.toExponential(3);
+        return exp.replace("+", "");
     }
 }

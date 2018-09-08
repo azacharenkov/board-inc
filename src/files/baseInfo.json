@@ -9,6 +9,7 @@
         },
         {
             "name": "Ore Mine",
+            "enum": "ORE_MINE",
             "basePrice": 55,
             "baseIncome": 0.1,
             "purchasable": true,
@@ -16,6 +17,7 @@
         },
         {
             "name": "Iron Mine",
+            "enum": "IRON_MINE",
             "basePrice": 105,
             "baseIncome": 0.5,
             "purchasable": true,
@@ -23,6 +25,7 @@
         },
         {
             "name": "Gold Mine",
+            "enum": "GOLD_MINE",
             "basePrice": 150,
             "baseIncome": 1.0,
             "purchasable": true,
@@ -37,6 +40,7 @@
         },
         {
             "name": "Meseum",
+            "enum": "MESEUM",
             "basePrice": 250,
             "baseIncome": 1.5,
             "purchasable": true,
@@ -44,6 +48,7 @@
         },
         {
             "name": "Gym",
+            "enum": "GYM",
             "basePrice": 300,
             "baseIncome": 2.0,
             "purchasable": true,
@@ -51,20 +56,22 @@
         },
         {
             "name": "Club",
+            "enum": "CLUB",
             "basePrice": 350,
             "baseIncome": 2.5,
             "purchasable": true,
             "imageUrl": "xxx.png"
         },
         {
-            "name": "Parking",
+            "name": "Construction Site",
             "basePrice": 400,
             "baseIncome": 3.0,
-            "purchasable": true,
+            "purchasable": false,
             "imageUrl": "xxx.png"
         },
         {
             "name": "Cardiff",
+            "enum": "CARDIFF",
             "basePrice": 450,
             "baseIncome": 3.5,
             "purchasable": true,
@@ -72,6 +79,7 @@
         },
         {
             "name": "Bath",
+            "enum": "BATH",
             "basePrice": 500,
             "baseIncome": 4.0,
             "purchasable": true,
@@ -79,6 +87,7 @@
         },
         {
             "name": "Bristol",
+            "enum": "BRISTOL",
             "basePrice": 550,
             "baseIncome": 4.5,
             "purchasable": true,
@@ -88,11 +97,12 @@
             "name": "Random",
             "basePrice": 600,
             "baseIncome": 5.0,
-            "purchasable": true,
+            "purchasable": false,
             "imageUrl": "random.png"
         },
         {
             "name": "Picadilly",
+            "enum": "PICADILLY",
             "basePrice": 650,
             "baseIncome": 5.5,
             "purchasable": true,
@@ -102,11 +112,11 @@
             "name": "Tax",
             "basePrice": 700,
             "baseIncome": 6.0,
-            "purchasable": true,
+            "purchasable": false,
             "imageUrl": "tax.png"
         },
         {
-            "name": "Pall Mall",
+            "name": "City Hall",
             "basePrice": 750,
             "baseIncome": 6.5,
             "purchasable": true,

@@ -1,0 +1,58 @@
+{
+    "u1":{
+            "name": "",
+            "for":"ALL",
+            "bonus": 1.25,
+            "cost": 1000,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u2":{
+            "name": "",
+            "for":"ORE_MINE",
+            "bonus": 1.5,
+            "cost": 2000,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u3":{
+            "name": "",
+            "for":"IRON_MINE",
+            "bonus": 1.5,
+            "cost": 2500,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u4":{
+            "name": "",
+            "for":"GOLD_MINE",
+            "bonus": 1.5,
+            "cost": 3000,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u5":{
+            "name": "",
+            "for":"CLUB",
+            "bonus": 1.5,
+            "cost": 3500,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u6":{
+            "name": "",
+            "for":"GYM",
+            "bonus": 1.5,
+            "cost": 4000,
+            "requirementType": "MONEY",
+            "requirement": 1000
+        },
+    "u60":{
+            "name": "",
+            "for":"GYM",
+            "bonus": 1.5,
+            "cost": 4000,
+            "requirementType": "MONEY",
+            "requirement": 10000000
+        }
+}

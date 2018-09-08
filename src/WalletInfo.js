@@ -4,6 +4,8 @@ import {Actions} from './Actions.jsx';
 
 import baseInfo from './files/baseInfo.json';
 
+import {CostUtils} from './CostUtils.js';
+
 class WalletInfo extends Component {
 
     state = {
@@ -27,6 +29,18 @@ class WalletInfo extends Component {
         this.incomeHandler = setTimeout(()=> this.collectIncome(), 1000);
     }
 
+    getIncomePerSecond = () => {
+        var income = 0;
+        if(this.props.boardState.board !== null) {
+            for (var i = 0; i < this.props.boardState.board.tiles.length; i++) {
+                var tile = this.props.boardState.board.tiles[i];
+                var baseTile = baseInfo.tiles[i];
+                income += (tile.bought * baseTile.baseIncome);
+            }
+        }
+        return income;
+    }
+
     componentWillUnmount() {
         // If timer handler is defined - clear the timeout
         // so it would stop calling the method after this view was removed
@@ -38,8 +52,13 @@ class WalletInfo extends Component {
 
     render() {
         return (
-            <div className = "wallet-state">
-                {this.props.walletState.owned}
+            <div className="income-div">
+                <div className = "wallet-state">
+                    {CostUtils.toExponential(this.props.walletState.owned)}
+                </div>
+                <div className = "income-per-sec">
+                    {CostUtils.toExponential(this.getIncomePerSecond()) + "/s"}
+                </div>
             </div>
         );
     }

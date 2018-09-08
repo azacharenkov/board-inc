@@ -4,32 +4,46 @@
             "type": "MOVES",
             "rewards": [
                 {
+                    "id": "M1",
                     "name": "",
-                    "amount": 1
+                    "amount": 1,
+                    "imageUrl" : "first-walk.png"
                 },
                 {
+                    "id": "M2",
                     "name": "",
-                    "amount": 10
+                    "amount": 10,
+                    "imageUrl" : "first-walk.png"
                 },
                 {
+                    "id": "M3",
                     "name": "",
-                    "amount": 25
+                    "amount": 25,
+                    "imageUrl" : "hiking.png"
                 },
                 {
+                    "id": "M4",
                     "name": "",
-                    "amount": 50
+                    "amount": 50,
+                    "imageUrl" : "hiking.png"
                 },
                 {
+                    "id": "M5",
                     "name": "",
-                    "amount": 75
+                    "amount": 75,
+                    "imageUrl" : "hiking.png"
                 },
                 {
+                    "id": "M6",
                     "name": "",
-                    "amount": 100
+                    "amount": 100,
+                    "imageUrl" : "veteran.png"
                 },
                 {
+                    "id": "M7",
                     "name": "",
-                    "amount": 200
+                    "amount": 200,
+                    "imageUrl" : "veteran.png"
                 }
             ]
         },
@@ -37,30 +51,37 @@
             "type": "DICE",
             "rewards": [
                 {
+                    "id": "D1",
                     "name": "",
                     "amount": 1
                 },
                 {
+                    "id": "D2",
                     "name": "",
                     "amount": 10
                 },
                 {
+                    "id": "D3",
                     "name": "",
                     "amount": 25
                 },
                 {
+                    "id": "D4",
                     "name": "",
                     "amount": 50
                 },
                 {
+                    "id": "D5",
                     "name": "",
                     "amount": 75
                 },
                 {
+                    "id": "D6",
                     "name": "",
                     "amount": 100
                 },
                 {
+                    "id": "D7",
                     "name": "",
                     "amount": 200
                 }
@@ -70,30 +91,37 @@
             "type": "BUILDING",
             "rewards": [
                 {
+                    "id": "B1",
                     "name": "",
                     "amount": 1
                 },
                 {
+                    "id": "B2",
                     "name": "",
                     "amount": 10
                 },
                 {
+                    "id": "B3",
                     "name": "",
                     "amount": 25
                 },
                 {
+                    "id": "B4",
                     "name": "",
                     "amount": 50
                 },
                 {
+                    "id": "B5",
                     "name": "",
                     "amount": 75
                 },
                 {
+                    "id": "B6",
                     "name": "",
                     "amount": 100
                 },
                 {
+                    "id": "B7",
                     "name": "",
                     "amount": 200
                 }

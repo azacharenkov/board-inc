@@ -27,9 +27,9 @@
     to { transform: rotate(360deg); }
   }
   
-  .app {
-      display: block;
-  }
+.app {
+    display: flex;
+}
   
   .mid-line {
       display: flex;
@@ -70,7 +70,8 @@
   }
   
   .dice {
-    margin: 0 55px 0 55px;
+    margin: 7px 55px 0 55px;
+    background: white;
   }
   
   .board-piece-purchase {
@@ -84,11 +85,19 @@
     width: 60px;
     height: 28px;
     text-align: center;
-    border-width: 1px;
+    border-width: 3px;
     margin: 5px;
-    padding: 5px;
+    padding: 3px;
+    border-color: darkgoldenrod;
+    background: darkkhaki;
+    font-family: monospace;
+    font-weight: bold;
 }
-  
+
+.purchase-btn.false {
+    background: darkgoldenrod;
+}
+
 img {
     height: 100%;
 }
@@ -130,9 +139,33 @@ img {
 }
 
 .board-and-dice {
-    display: flex;
+    
 }
-  
+
+.under-board {
+    width: 280px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    background: lemonchiffon;
+    height: 170px;
+}
+
+.purchase-buttons {
+    height: 50px;
+}
+
+.building-info {
+    border: solid;
+    border-color: cadetblue;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 3px;
+    background: lightgray;
+    font-family: monospace;
+    height: 95px;
+}
+
 .purchases {
     width: 280px;
     margin: 10px 0 0 20px;
@@ -146,16 +179,54 @@ img {
 
 }
 
-.wallet-state {
+.wallet-and-dice-div {
+    border: solid;
     margin: 10px;
+    border-radius: 5px;
+    height: 110px;
+    width: 200px;
+    overflow: auto;
+    background: gold;
+    text-align: -webkit-center;
+}
+
+.income-div {
+    display: flex;
+    padding: 10px 5px 5px 5px;
+    border-bottom: solid;
+}
+
+.wallet-state {
+    flex: 1;
+    text-align: center;
+}
+
+.income-per-sec {
+    flex: 1;
+    text-align: center;
+}
+
+.achievements-title {
+    height: 20px;
+    background: dimgray;
+    color: cornsilk;
+    font-family: monospace;
+    font-size: 16px;
+    text-align: center;
+}
+
+.achievements-list {
+    height: 132px;
+    overflow: auto;
 }
 
 .achievements-div {
     border: solid;
     margin: 10px;
     border-radius: 5px;
-    max-height: 200px;
-    max-width: 200px;
+    height: 152px;
+    width: 200px;
+    background: olive;
 }
 
 .achievements-div .achievement {
@@ -164,4 +235,37 @@ img {
     border: solid;
     border-radius: 5px;
     margin: 1px;
+}
+
+.achievements-div .achievement.true {
+    background: black;
+}
+
+.achievements-div .achievement.false {
+    background: white;
+}
+
+
+.ach-row {
+    display: flex;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: darkkhaki; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: darkgoldenrod; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7d5a02; 
 }

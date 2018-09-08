@@ -23,36 +23,59 @@ class PiecePurchaseButtons extends Component {
     }
 
     render() {
-        return this.getButtonsDiv();
+
+        return (
+            <div className="under-board">
+                <div className = "purchase-buttons">
+                    {this.getButtonsDiv()}
+                </div>
+                <div className="building-info">
+                    {CostUtils.getTileDescription(this.props.boardState.position - 1)}
+                </div>
+            </div>
+        )
     }
 
     getButtons = () => {
         var btns = [];
 
         let costForOne = CostUtils.costOf(this.props.boardState, 1);
+        let costForTen = CostUtils.costOf(this.props.boardState, 10);
+        let costForHund = CostUtils.costOf(this.props.boardState, 100);
+
+        var wallet = this.props.walletState.owned;
 
         btns.push(
-            <div className="purchase-btn" onClick = {(e) => this.props.purchase(costForOne, this.props.boardState.position - 1, 1)}>
+            <div className={"purchase-btn " + (wallet >= costForOne)} 
+            onClick = {(e) => this.purchase(costForOne, wallet, 1)}>
                 <div className="amount">x1</div>
-                <div className="cost">{parseFloat(costForOne).toFixed(2)}</div>
+                <div className="cost">{CostUtils.toExponential(costForOne)}</div>
             </div>
         );
 
-        // btns.push(
-        //     <div className="purchase-btn">
-        //         <div className="amount">x10</div>
-        //         <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 10)).toFixed(2)}</div>
-        //     </div>
-        // );
+        btns.push(
+            <div className={"purchase-btn " + (wallet >= costForTen)} 
+            onClick = {(e) => this.purchase(costForTen, wallet, 10)}>
+                <div className="amount">x10</div>
+                <div className="cost">{CostUtils.toExponential(costForTen)}</div>
+            </div>
+        );
 
-        // btns.push(
-        //     <div className="purchase-btn">
-        //         <div className="amount">x100</div>
-        //         <div className="cost">{parseFloat(CostUtils.costOf(this.props.boardState.position - 1, 100)).toFixed(2)}</div>
-        //     </div>
-        // );
+        btns.push(
+            <div className={"purchase-btn " + (wallet >= costForHund)} 
+            onClick = {(e) => this.purchase(costForHund, wallet, 100)}>
+                <div className="amount">x100</div>
+                <div className="cost">{CostUtils.toExponential(costForHund)}</div>
+            </div>
+        );
 
         return btns;
+    }
+
+    purchase = (cost, wallet, amount) => {
+        if(wallet >= cost) {
+            this.props.purchase(cost, this.props.boardState.position - 1, amount)
+        }
     }
 
     /*

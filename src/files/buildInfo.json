@@ -1,0 +1,69 @@
+{
+    "tiles": [
+        {
+            "name": "GO",
+            "info": "Landing on this tile will grant you 10% of your currently earned money."
+        },
+        {
+            "name": "Ore Mine",
+            "info": "Produces ore. But don't count too much on it bringing lots of money!"
+        },
+        {
+            "name": "Iron Mine",
+            "info": "Produces iron. A decent source for some extra earning!"
+        },
+        {
+            "name": "Gold Mine",
+            "info": "Produces gold. Soon you will be super rich!"
+        },
+        {
+            "name": "Jail",
+            "info": "It seems you're walking way too fast in the rural area... You will lose 25% of your total moves made this game."
+        },
+        {
+            "name": "Museum",
+            "info": "Everybody comes to the museum to admire your achievements. Each achievemnt will increase your total earnings."
+        },
+        {
+            "name": "Gym",
+            "info": "You better walk! Total earnings will be increased based on total moves made this game."
+        },
+        {
+            "name": "Club",
+            "info": ""
+        },
+        {
+            "name": "Construction Site",
+            "info": "Something is being built here, but nothing that you can buy yet."
+        },
+        {
+            "name": "Cardiff",
+            "info": ""
+        },
+        {
+            "name": "Bath",
+            "info": ""
+        },
+        {
+            "name": "Bristol",
+            "info": ""
+        },
+        {
+            "name": "Random",
+            "info": ""
+        },
+        {
+            "name": "Picadilly",
+            "info": ""
+        },
+        {
+            "name": "Tax",
+            "info": "Busted! You may be a kingpin here, but you still have to pay off your taxes. The late ones incur 50% of your total earnings."
+        },
+        {
+            "name": "Town Hall",
+            "info": "Local council gathers here to discuss town business. The more buildings you have - the more impressed they will be and will increase your earnings."
+        }
+    ]
+
+}

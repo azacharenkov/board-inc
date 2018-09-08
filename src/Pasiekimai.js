@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import {Actions} from './Actions.jsx';
 
 import achievements from './files/achievements.json';
+
+import quest from './images/question.png';
 
 class Pasiekimai extends Component {
 
     state = {
 
+    }
+
+    componentDidUpdate() {
+        console.log(this.props.boardState);
+        if(this.props.boardState.type === "ROLL") {
+            var moves = this.props.boardState.moves;
+            for (var a = 0; a < achievements.achievements[0].rewards.length; a++) {
+                var rew = achievements.achievements[0].rewards[a];
+                if(rew.amount <= moves && !this.props.boardState.achieved.includes(rew.id)) {
+                    this.props.achieve(rew.id);
+                    // Also notify user about it
+                }
+            }
+        }
     }
 
     createAchievements = () => {
@@ -17,10 +34,21 @@ class Pasiekimai extends Component {
             var ach = achievements.achievements[i];
             for (var a = 0; a < ach.rewards.length; a++) {
                 var rew = ach.rewards[a];
+                var have = this.props.boardState.achieved.includes(rew.id);
                 achs.push(
-                    <div className="achievement">
+                    <div className={"achievement " + have}>
+                        <img src={this.getAchievementIcon(have, rew)} />
                     </div>
                 )
+
+                if(a!==0 && a % 4 === 0) {
+                    rows.push(
+                        <div className="ach-row">
+                            {achs}
+                        </div>
+                    )
+                    achs = [];
+                } 
             }
             rows.push(
                 <div className="ach-row">
@@ -31,18 +59,37 @@ class Pasiekimai extends Component {
         return rows;
     }
 
+    getAchievementIcon = (have, ach) => {
+        if(have) {
+            return require('./images/' + ach.imageUrl);
+        }
+        return quest;
+    }
+
     render() {
         return (
             <div>
-                <div className="achievements-temp">
-                    {this.props.boardState.rolled}
-                    {"M: " + this.props.boardState.moves}
-                </div>
                 <div className="achievements-div">
-                    {this.createAchievements()}
+                    <div className="achievements-title">
+                        Achievements
+                    </div>
+                    <div className="achievements-list">
+                        {this.createAchievements()}
+                    </div>
                 </div>
             </div>
         );
+    }
+
+    /*
+    * Maps properties to dispatch methods to send actions to the store reducers
+    */
+    static mapDispatchToProps(dispatch) {
+        return {
+            achieve: (ach) => {
+                dispatch(Actions.achieve(ach));
+            },
+        }
     }
 
     /*
@@ -55,4 +102,4 @@ class Pasiekimai extends Component {
     }
 }
 
-export default connect(Pasiekimai.mapStateToProps, null)(Pasiekimai);
+export default connect(Pasiekimai.mapStateToProps, Pasiekimai.mapDispatchToProps)(Pasiekimai);

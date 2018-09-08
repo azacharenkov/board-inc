@@ -10,31 +10,25 @@ import Dice from './Dice.js';
 import WalletInfo from './WalletInfo.js';
 import PiecePurchaseButtons from './PiecePurchaseButtons.js';
 import Pasiekimai from './Pasiekimai.js';
+import Upgrades from './Upgrades.js';
 
 import board from './files/board.json';
 
 class App extends Component {
 
     componentDidMount() {
-        this.loadData();
-
         this.saveTimerHandler = setTimeout(()=> this.saveData(), 10000);
-    }
-
-    loadData = () => {
-        if(localStorage.board && localStorage.board !== null) {
-            this.props.setBoard(JSON.parse(localStorage.board));
-            this.props.changePosition(parseInt(localStorage.position), parseInt(localStorage.position));
-        }
-        else {
-            this.props.setBoard(board);
-        }
     }
 
     saveData = () => {
         if(localStorage) {
             localStorage.setItem("board", JSON.stringify(this.props.boardState.board));
             localStorage.setItem("position", this.props.boardState.position);
+            localStorage.setItem("moves", this.props.boardState.moves);
+            localStorage.setItem("wallet", this.props.walletState.owned);
+            localStorage.setItem("achieved", this.props.boardState.achieved.join());
+            localStorage.setItem("rolled", this.props.boardState.rolled.join());
+            localStorage.setItem("upgrades", this.props.boardState.upgrades.join());
         }
         this.saveTimerHandler = setTimeout(()=> this.saveData(), 10000);
     }
@@ -88,15 +82,18 @@ class App extends Component {
             <div className="app">
                 <div className="board-and-dice">
                     <Board />
-                    <div>
-                        <WalletInfo />
-                        <Dice movePosition = {this.movePosition}/>
-                        <Pasiekimai />
-                    </div>
-                </div>
-                <div className="purchases">
                     <PiecePurchaseButtons />
                 </div>
+                <div>
+                        <div className="wallet-and-dice-div">
+                            <WalletInfo />
+                            <Dice movePosition = {this.movePosition}/>
+                        </div>
+                        <div>
+                            <Pasiekimai />
+                            <Upgrades />
+                        </div>
+                    </div>
             </div>
         );
     }
@@ -126,7 +123,8 @@ class App extends Component {
     */
     static mapStateToProps(store) {
         return {
-            boardState: store.boardState
+            boardState: store.boardState,
+            walletState: store.walletState
         }
     }
 }

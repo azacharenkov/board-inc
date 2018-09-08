@@ -5,6 +5,8 @@ import building from './images/bank.png';
 
 import baseInfo from './files/baseInfo.json';
 
+import {CostUtils} from './CostUtils.js';
+
 class BoardPieceInfo extends Component {
 
     state = {
@@ -25,7 +27,7 @@ class BoardPieceInfo extends Component {
         return (
             <div className = {"board-piece-info"}>
                 <div className="title">
-                    {boardPiece.name}
+                    {CostUtils.getTileName(this.props.boardState.position - 1)}
                 </div>
                 <div className="piece-info-image">
                     <img src ="" alt="i" />

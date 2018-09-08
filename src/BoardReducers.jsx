@@ -1,29 +1,61 @@
 import { BOARD_SELECTION, BOARD_ASSIGNMENT, 
-    BOARD_UPDATE, ROLL, PURCHASE, GAIN } from './Actions.jsx';
+    BOARD_UPDATE, ROLL, PURCHASE, GAIN, ACHIEVEMENT } from './Actions.jsx';
 
 export class BoardReducers {
     
+    static loadInitialState() {
+        var board = null;
+        var position = 1;
+        var moves = 0;
+        var achieved = [];
+        var rolled = [0, 0, 0, 0, 0, 0];
+        var upgrades = [];
+        if(localStorage.board && localStorage.board !== null) {
+            board = JSON.parse(localStorage.board);
+            position = parseInt(localStorage.position);
+        }
+        if(localStorage.moves && localStorage.moves !== null) {
+            moves = parseInt(localStorage.moves);
+        }
+        if(localStorage.achieved && localStorage.achieved !== null) {
+            achieved = localStorage.achieved.split(",");
+        }
+        if(localStorage.rolled && localStorage.rolled !== null) {
+            rolled = localStorage.rolled.split(",");
+        }
+        if(localStorage.upgrades && localStorage.upgrades !== null) {
+            upgrades = localStorage.upgrades.split(",");
+        }
+
+        return {
+            position: position,
+            moves: moves,
+            rolled: rolled,
+            targetPosition: position,
+            board: board,
+            achieved: achieved,
+            upgrades: upgrades,
+            type: ""
+		}
+    }
+
     static boardPositionSelection(state, action) {
 
-		var initialState = {
-            position: 1,
-            moves: 0,
-            rolled: [0, 0, 0, 0, 0, 0],
-            targetPosition: 1,
-            board: null,
-		}
+		var initialState = this.loadInitialState();
 
 		return (state, action) => {
 		  	switch (action.type) {
 		    	case BOARD_SELECTION:
 		      		return Object.assign({}, state, {
                         position: action.position,
-                        targetPosition: action.targetPosition
+                        targetPosition: action.targetPosition,
+                        type: action.type
                     });
                 case BOARD_ASSIGNMENT:
                 case BOARD_UPDATE:
                     return Object.assign({}, state, {
-                        board: action.board
+                        board: action.board,
+                        type: action.type
                     });
                 case ROLL:
                     var newRolls = state.rolled;
@@ -32,13 +64,22 @@ export class BoardReducers {
                     var moves = state.moves + 1;
                     return Object.assign({}, state, {
                         rolled: newRolls,
-                        moves: moves
+                        moves: moves,
+                        type: action.type
                     });
                 case PURCHASE:
                     var board = state.board;
                     board.tiles[action.index].bought = board.tiles[action.index].bought + action.buildings;
                     return Object.assign({}, state, {
-                        board: board
+                        board: board,
+                        type: action.type
+                    });
+                case ACHIEVEMENT:
+                    var achs = state.achieved;
+                    achs.push(action.ach);
+                    return Object.assign({}, state, {
+                        achieved: achs,
+                        type: action.type
                     });
 		    	default:
 		      		return state || initialState;
@@ -46,11 +87,20 @@ export class BoardReducers {
 		}
     }
     
+    static loadWallet() {
+        var owned = 200;
+        if(localStorage.wallet && localStorage.wallet !== null) {
+            owned = parseInt(localStorage.wallet);
+        }
+
+        return {
+            owned: owned,
+        };
+    }
+
     static wallet(state, action) {
 
-		var initialState = {
-            owned: 200,
-		}
+		var initialState = this.loadWallet();
 
 		return (state, action) => {
 		  	switch (action.type) {

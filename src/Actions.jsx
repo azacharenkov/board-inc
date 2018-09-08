@@ -13,6 +13,8 @@ export const BOARD_UPDATE = 'BOARD_UPDATE';
 export const PURCHASE = 'PURCHASE';
 export const GAIN = 'GAIN';
 
+export const ACHIEVEMENT = 'ACHIEVEMENT';
+
 export class Actions {
 
 	/*
@@ -41,4 +43,9 @@ export class Actions {
     static gain(amount) {
 	    return { type: GAIN, amount }
     }
+
+    static achieve(ach) {
+	    return { type: ACHIEVEMENT, ach }
+    }
+
 }
