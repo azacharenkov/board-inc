@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import {Actions} from './Actions.jsx';
 
 import building from './images/bank.png';
 
@@ -11,6 +12,26 @@ class BoardPieceInfo extends Component {
 
     state = {
 
+    }
+
+    componentDidUpdate() {
+        console.log(this.props);
+        if(this.props.boardState.type === "BOARD_SELECTION") {
+            if(this.props.boardState.position === this.props.boardState.targetPosition) {
+                var info = baseInfo.tiles[this.props.boardState.position - 1];
+                if(!info.purchasable) {
+                    if(info.enum === "TAX") {
+                        this.props.gainPercentage(-0.5)
+                    } else if(info.enum === "JAIL") {
+                        this.props.gainMoves(-0.25)
+                    } else if(info.enum === "GO") {
+                        this.props.gainPercentage(0.1)
+                    }
+                }
+            } else if(baseInfo.tiles[this.props.boardState.position - 1].enum === "GO"){
+                this.props.gainPercentage(0.1)
+            }
+        }
     }
 
     render() {
@@ -45,6 +66,20 @@ class BoardPieceInfo extends Component {
     }
 
     /*
+    * Maps properties to dispatch methods to send actions to the store reducers
+    */
+    static mapDispatchToProps(dispatch) {
+        return {
+            gainPercentage: (perc) => {
+                dispatch(Actions.gainPercentage(perc));
+            },
+            gainMoves: (perc) => {
+                dispatch(Actions.gainMoves(perc));
+            }
+        }
+    }
+
+    /*
     * Maps state from the store to properties used by this class
     */
     static mapStateToProps(store) {
@@ -54,4 +89,4 @@ class BoardPieceInfo extends Component {
     }
 }
 
-export default connect(BoardPieceInfo.mapStateToProps, null)(BoardPieceInfo);
+export default connect(BoardPieceInfo.mapStateToProps, BoardPieceInfo.mapDispatchToProps)(BoardPieceInfo);

@@ -48,6 +48,41 @@
             ]
         },
         {
+            "type": "VISITED_TAX",
+            "rewards": [
+                {
+                    "id": "VT1",
+                    "name": "",
+                    "amount": 1,
+                    "imageUrl" : "bad_luck.png"
+                },
+                {
+                    "id": "VT2",
+                    "name": "",
+                    "amount": 10,
+                    "imageUrl" : "bad_luck.png"
+                },
+                {
+                    "id": "VT3",
+                    "name": "",
+                    "amount": 25,
+                    "imageUrl" : "bad_luck.png"
+                },
+                {
+                    "id": "VT4",
+                    "name": "",
+                    "amount": 50,
+                    "imageUrl" : "bad_luck.png"
+                },
+                {
+                    "id": "VT5",
+                    "name": "",
+                    "amount": 75,
+                    "imageUrl" : "bad_luck.png"
+                }
+            ]
+        },
+        {
             "type": "DICE",
             "rewards": [
                 {

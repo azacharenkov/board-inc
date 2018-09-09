@@ -15,6 +15,11 @@ export const GAIN = 'GAIN';
 
 export const ACHIEVEMENT = 'ACHIEVEMENT';
 
+export const GAIN_PERCENTAGE = "GAIN_PERCENTAGE";
+export const GAIN_MOVES = "GAIN_MOVES";
+
+export const UPGRADE = "UPGRADE";
+
 export class Actions {
 
 	/*
@@ -48,4 +53,15 @@ export class Actions {
 	    return { type: ACHIEVEMENT, ach }
     }
 
+    static upgrade(upg) {
+	    return { type: UPGRADE, upg }
+    }
+
+    static gainPercentage(percentage) {
+	    return { type: GAIN_PERCENTAGE, percentage }
+    }
+
+    static gainMoves(percentage) {
+	    return { type: GAIN_MOVES, percentage }
+    }
 }

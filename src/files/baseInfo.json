@@ -2,6 +2,7 @@
     "tiles": [
         {
             "name": "GO",
+            "enum": "GO",
             "basePrice": 0,
             "baseIncome": 0,
             "purchasable": false,
@@ -33,6 +34,7 @@
         },
         {
             "name": "Jail",
+            "enum": "JAIL",
             "basePrice": 0,
             "baseIncome": 0,
             "purchasable": false,
@@ -64,6 +66,7 @@
         },
         {
             "name": "Construction Site",
+            "enum": "CONSTR",
             "basePrice": 400,
             "baseIncome": 3.0,
             "purchasable": false,
@@ -95,6 +98,7 @@
         },
         {
             "name": "Random",
+            "enum": "RANDOM",
             "basePrice": 600,
             "baseIncome": 5.0,
             "purchasable": false,
@@ -110,6 +114,7 @@
         },
         {
             "name": "Tax",
+            "enum": "TAX",
             "basePrice": 700,
             "baseIncome": 6.0,
             "purchasable": false,
@@ -117,6 +122,7 @@
         },
         {
             "name": "City Hall",
+            "enum": "CITY_HALL",
             "basePrice": 750,
             "baseIncome": 6.5,
             "purchasable": true,

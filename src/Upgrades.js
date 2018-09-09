@@ -18,15 +18,22 @@ class Upgrades extends Component {
         var achs = [];
         var a = 0;
         var owned = this.props.walletState.owned;
-        for (var key in upgrades) {
+        for (let key in upgrades) {
             var upgrade = upgrades[key];
+
+            if(this.props.boardState.upgrades.includes(key)) {
+                continue;
+            }
 
             if(upgrade.requirementType === "MONEY" && owned < upgrade.requirement) {
                 continue;
             }
+
+            let possible = owned >= upgrade.cost;
             
             achs.push(
-                <div className={"achievement " + (owned >= upgrade.cost)}>
+                <div className={"achievement " + (!possible)}
+                    onClick = {() => this.purchase(possible, upgrade, key)}>
                     <img src={quest} />
                 </div>
             )
@@ -41,7 +48,23 @@ class Upgrades extends Component {
             }
             a++;
         }
+
+        if(achs.length > 0) {
+            rows.push(
+                <div className="ach-row">
+                    {achs}
+                </div>
+            )
+        }
+
         return rows;
+    }
+
+    purchase = (canBuy, upgrade, key) => {
+        if(canBuy) {
+            this.props.upgrade(key);
+            this.props.pay(upgrade.cost);
+        }
     }
 
     getAchievementIcon = (have, ach) => {
@@ -71,8 +94,11 @@ class Upgrades extends Component {
     */
     static mapDispatchToProps(dispatch) {
         return {
-            achieve: (ach) => {
-                dispatch(Actions.achieve(ach));
+            upgrade: (upg) => {
+                dispatch(Actions.upgrade(upg));
+            },
+            pay: (amount) => {
+                dispatch(Actions.gain(amount));
             },
         }
     }

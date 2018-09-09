@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {Actions} from './Actions.jsx';
 
 import achievements from './files/achievements.json';
+import baseInfo from './files/baseInfo.json';
 
 import quest from './images/question.png';
 
@@ -21,6 +22,21 @@ class Pasiekimai extends Component {
                 if(rew.amount <= moves && !this.props.boardState.achieved.includes(rew.id)) {
                     this.props.achieve(rew.id);
                     // Also notify user about it
+                }
+            }
+        }
+        if(this.props.boardState.type === "BOARD_UPDATE") {
+            if(this.props.boardState.position === this.props.boardState.targetPosition) {
+                var info = baseInfo.tiles[this.props.boardState.position - 1];
+                if(info.enum === "TAX") {
+                   var tile = this.props.boardState.board.tiles[this.props.boardState.position - 1]; 
+                    for (var a = 0; a < achievements.achievements[1].rewards.length; a++) {
+                        var rew = achievements.achievements[1].rewards[a];
+                        if(rew.amount <= tile.visited && !this.props.boardState.achieved.includes(rew.id)) {
+                            this.props.achieve(rew.id);
+                            // Also notify user about it
+                        }
+                    }
                 }
             }
         }

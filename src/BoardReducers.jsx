@@ -1,5 +1,6 @@
 import { BOARD_SELECTION, BOARD_ASSIGNMENT, 
-    BOARD_UPDATE, ROLL, PURCHASE, GAIN, ACHIEVEMENT } from './Actions.jsx';
+    BOARD_UPDATE, ROLL, PURCHASE, GAIN, ACHIEVEMENT,
+    GAIN_PERCENTAGE, GAIN_MOVES, UPGRADE } from './Actions.jsx';
 
 export class BoardReducers {
     
@@ -74,11 +75,25 @@ export class BoardReducers {
                         board: board,
                         type: action.type
                     });
+                case GAIN_MOVES :
+                    var moves = state.moves;
+                    moves = Math.ceil(moves + (moves * action.percentage));
+                    return Object.assign({}, state, {
+                        moves: moves,
+                        type: action.type
+                    });
                 case ACHIEVEMENT:
                     var achs = state.achieved;
                     achs.push(action.ach);
                     return Object.assign({}, state, {
                         achieved: achs,
+                        type: action.type
+                    });
+                case UPGRADE:
+                    var upgs = state.upgrades;
+                    upgs.push(action.upg);
+                    return Object.assign({}, state, {
+                        upgrades: upgs,
                         type: action.type
                     });
 		    	default:
@@ -116,6 +131,12 @@ export class BoardReducers {
                     return Object.assign({}, state, {
                         owned: (state.owned + action.amount)
                   });
+                case GAIN_PERCENTAGE:
+                    var owned = state.owned;
+                    owned = owned + (owned * action.percentage);
+                    return Object.assign({}, state, {
+                        owned: owned
+                });
 		    	default:
 		      		return state || initialState;
 		  	}
