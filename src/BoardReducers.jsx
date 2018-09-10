@@ -2,10 +2,12 @@ import { BOARD_SELECTION, BOARD_ASSIGNMENT,
     BOARD_UPDATE, ROLL, PURCHASE, GAIN, ACHIEVEMENT,
     GAIN_PERCENTAGE, GAIN_MOVES, UPGRADE } from './Actions.jsx';
 
+    import boardTiles from './files/board.json';
+
 export class BoardReducers {
     
     static loadInitialState() {
-        var board = null;
+        var board = boardTiles;
         var position = 1;
         var moves = 0;
         var achieved = [];
