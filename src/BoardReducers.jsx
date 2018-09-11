@@ -13,12 +13,16 @@ export class BoardReducers {
         var achieved = [];
         var rolled = [0, 0, 0, 0, 0, 0];
         var upgrades = [];
+        var baseIncome = 1;
         if(localStorage.board && localStorage.board !== null) {
             board = JSON.parse(localStorage.board);
             position = parseInt(localStorage.position);
         }
         if(localStorage.moves && localStorage.moves !== null) {
             moves = parseInt(localStorage.moves);
+        }
+        if(localStorage.baseIncome && localStorage.baseIncome !== null) {
+            baseIncome = parseInt(localStorage.baseIncome);
         }
         if(localStorage.achieved && localStorage.achieved !== null) {
             achieved = localStorage.achieved.split(",");
@@ -36,6 +40,7 @@ export class BoardReducers {
             rolled: rolled,
             targetPosition: position,
             board: board,
+            baseIncome: baseIncome,
             achieved: achieved,
             upgrades: upgrades,
             type: ""

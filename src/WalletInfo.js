@@ -18,7 +18,7 @@ class WalletInfo extends Component {
 
     collectIncome = () => {
         if(this.props.boardState.board !== null) {
-            var income = 0;
+            var income = this.props.boardState.baseIncome;
             for (var i = 0; i < this.props.boardState.board.tiles.length; i++) {
                 var tile = this.props.boardState.board.tiles[i];
                 var baseTile = baseInfo.tiles[i];

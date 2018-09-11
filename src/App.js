@@ -25,6 +25,7 @@ class App extends Component {
             localStorage.setItem("board", JSON.stringify(this.props.boardState.board));
             localStorage.setItem("position", this.props.boardState.position);
             localStorage.setItem("moves", this.props.boardState.moves);
+            localStorage.setItem("baseIncome", this.props.boardState.baseIncome);
             localStorage.setItem("wallet", this.props.walletState.owned);
             localStorage.setItem("achieved", this.props.boardState.achieved.join());
             localStorage.setItem("rolled", this.props.boardState.rolled.join());
