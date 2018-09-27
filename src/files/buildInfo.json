@@ -6,15 +6,15 @@
         },
         {
             "name": "Ore Mine",
-            "info": "Produces ore. But don't count too much on it bringing lots of money!"
+            "info": "Tile description to be updated"
         },
         {
             "name": "Iron Mine",
-            "info": "Produces iron. A decent source for some extra earning!"
+            "info": "Tile description to be updated!"
         },
         {
             "name": "Gold Mine",
-            "info": "Produces gold. Soon you will be super rich!"
+            "info": "Tile description to be updated!"
         },
         {
             "name": "Jail",
@@ -30,31 +30,31 @@
         },
         {
             "name": "Club",
-            "info": ""
+            "info": "Tile description to be updated"
         },
         {
             "name": "Construction Site",
             "info": "Something is being built here, but nothing that you can buy yet."
         },
         {
-            "name": "Cardiff",
-            "info": ""
+            "name": "Untitled",
+            "info": "Tile description to be updated"
         },
         {
-            "name": "Bath",
-            "info": ""
+            "name": "Untitled 2",
+            "info": "Tile description to be updated"
         },
         {
-            "name": "Bristol",
-            "info": ""
+            "name": "Untitled 3",
+            "info": "Tile description to be updated"
         },
         {
             "name": "Random",
-            "info": ""
+            "info": "This will draw a random card"
         },
         {
-            "name": "Picadilly",
-            "info": ""
+            "name": "Untitled 4",
+            "info": "Tile description to be updated"
         },
         {
             "name": "Tax",

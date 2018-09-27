@@ -25,13 +25,22 @@ class BoardPieceInfo extends Component {
                     } else if(info.enum === "JAIL") {
                         this.props.gainMoves(-0.25)
                     } else if(info.enum === "GO") {
-                        this.props.gainPercentage(0.1)
+                        var percentToGain = 0.1 * (this.props.boardState.board.tiles[this.props.boardState.position - 1].visited + 1);
+                        this.props.gainPercentage(percentToGain)
                     }
                 }
             } else if(baseInfo.tiles[this.props.boardState.position - 1].enum === "GO"){
-                this.props.gainPercentage(0.1)
+                this.updateBoardElement();
+                var percentToGain = 0.1 * (this.props.boardState.board.tiles[this.props.boardState.position - 1].visited + 1);
+                this.props.gainPercentage(percentToGain)
             }
         }
+    }
+
+    updateBoardElement = () => {
+        var board = this.props.boardState.board;
+        board.tiles[this.props.boardState.position - 1].visited++;
+        this.props.updateBoard(board);
     }
 
     render() {
@@ -51,7 +60,7 @@ class BoardPieceInfo extends Component {
                     {CostUtils.getTileName(this.props.boardState.position - 1)}
                 </div>
                 <div className="piece-info-image">
-                    <img src ="" alt="i" />
+                    <img src = {require('./images/' + pieceUrl)} />
                 </div>
                 <div className="footer">
                     <div className="visited">
@@ -75,7 +84,10 @@ class BoardPieceInfo extends Component {
             },
             gainMoves: (perc) => {
                 dispatch(Actions.gainMoves(perc));
-            }
+            },
+            updateBoard: (board) => {
+                dispatch(Actions.updateBoard(board));
+            },
         }
     }
 

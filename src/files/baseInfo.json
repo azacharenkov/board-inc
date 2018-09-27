@@ -73,7 +73,7 @@
             "imageUrl": "xxx.png"
         },
         {
-            "name": "Cardiff",
+            "name": "Untitled",
             "enum": "CARDIFF",
             "basePrice": 450,
             "baseIncome": 3.5,
@@ -81,7 +81,7 @@
             "imageUrl": "bridge.png"
         },
         {
-            "name": "Bath",
+            "name": "Untitled",
             "enum": "BATH",
             "basePrice": 500,
             "baseIncome": 4.0,
@@ -89,7 +89,7 @@
             "imageUrl": "church.png"
         },
         {
-            "name": "Bristol",
+            "name": "Untitled",
             "enum": "BRISTOL",
             "basePrice": 550,
             "baseIncome": 4.5,
@@ -105,7 +105,7 @@
             "imageUrl": "random.png"
         },
         {
-            "name": "Picadilly",
+            "name": "Untitled",
             "enum": "PICADILLY",
             "basePrice": 650,
             "baseIncome": 5.5,

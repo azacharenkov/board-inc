@@ -4,7 +4,8 @@
             "name": "GO",
             "basePrice": 0.5,
             "visited": 0,
-            "bought": 0
+            "bought": 0,
+            "bonus" : 0.1
         },
         {
             "name": "Ore Mine",
@@ -55,19 +56,19 @@
             "bought": 0
         },
         {
-            "name": "Cardiff",
+            "name": "Untitled",
             "basePrice": 0.5,
             "visited": 0,
             "bought": 0
         },
         {
-            "name": "Bath",
+            "name": "Untitled",
             "basePrice": 0.5,
             "visited": 0,
             "bought": 0
         },
         {
-            "name": "Bristol",
+            "name": "Untitled",
             "basePrice": 0.5,
             "visited": 0,
             "bought": 0
@@ -79,7 +80,7 @@
             "bought": 0
         },
         {
-            "name": "Picadilly",
+            "name": "Untitled",
             "basePrice": 0.5,
             "visited": 0,
             "bought": 0
@@ -91,7 +92,7 @@
             "bought": 0
         },
         {
-            "name": "Pall Mall",
+            "name": "Untitled",
             "basePrice": 0.5,
             "visited": 0,
             "bought": 0

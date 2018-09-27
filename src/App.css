@@ -34,6 +34,10 @@
   .mid-line {
       display: flex;
   }
+
+  .board {
+    padding: 10px 0 10px 10px;
+  }
   
   .board-piece {
       width:  50px;
@@ -149,6 +153,7 @@ img {
     border-radius: 5px;
     background: lemonchiffon;
     height: 170px;
+    margin: 0 0 0 10px;
 }
 
 .purchase-buttons {

@@ -17,28 +17,58 @@ class WalletInfo extends Component {
     }
 
     collectIncome = () => {
+        var multiplier = 1;
         if(this.props.boardState.board !== null) {
             var income = this.props.boardState.baseIncome;
             for (var i = 0; i < this.props.boardState.board.tiles.length; i++) {
                 var tile = this.props.boardState.board.tiles[i];
                 var baseTile = baseInfo.tiles[i];
                 income += (tile.bought * baseTile.baseIncome);
+                if(baseTile.enum === "MESEUM" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.001 * this.props.boardState.achieved.length);
+                }
+                else if(baseTile.enum === "GYM" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.001 * this.props.boardState.moves);
+                }
+                else if(baseTile.enum === "CITY_HALL" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.0002 * this.totalBought());
+                }
             }
+            income *= multiplier;
             this.props.gain(income);
         }
         this.incomeHandler = setTimeout(()=> this.collectIncome(), 1000);
     }
 
+    totalBought = () => {
+        var total = 0;
+        for (var i = 0; i < this.props.boardState.board.tiles.length; i++) {
+            var tile = this.props.boardState.board.tiles[i];
+            total += tile.bought;
+        }
+        return total;
+    }
+
     getIncomePerSecond = () => {
-        var income = 0;
+        var income = this.props.boardState.baseIncome;
+        var multiplier = 1;
         if(this.props.boardState.board !== null) {
             for (var i = 0; i < this.props.boardState.board.tiles.length; i++) {
                 var tile = this.props.boardState.board.tiles[i];
                 var baseTile = baseInfo.tiles[i];
                 income += (tile.bought * baseTile.baseIncome);
+                if(baseTile.enum === "MESEUM" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.001 * this.props.boardState.achieved.length);
+                }
+                else if(baseTile.enum === "GYM" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.001 * this.props.boardState.moves);
+                }
+                else if(baseTile.enum === "CITY_HALL" && tile.bought > 0) {
+                    multiplier = multiplier + (tile.bought * 0.0002 * this.totalBought());
+                }
             }
         }
-        return income;
+        return income * multiplier;
     }
 
     componentWillUnmount() {

@@ -13,7 +13,7 @@ export class BoardReducers {
         var achieved = [];
         var rolled = [0, 0, 0, 0, 0, 0];
         var upgrades = [];
-        var baseIncome = 1;
+        var baseIncome = 10;
         if(localStorage.board && localStorage.board !== null) {
             board = JSON.parse(localStorage.board);
             position = parseInt(localStorage.position);
@@ -110,7 +110,7 @@ export class BoardReducers {
     }
     
     static loadWallet() {
-        var owned = 200;
+        var owned = 1500;
         if(localStorage.wallet && localStorage.wallet !== null) {
             owned = parseInt(localStorage.wallet);
         }
